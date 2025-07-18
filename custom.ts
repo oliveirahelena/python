@@ -7,12 +7,14 @@ namespace py {
     /**
      * Exibe uma mensagem na tela por um curto período.
      * Equivalente a print() em muitos contextos de aprendizado.
-     * @param text O texto a ser exibido, eg: "Olá, Mundo!"
+     * @param text O texto principal a ser exibido.
+     * @param text2 (Opcional) Um segundo texto ou valor a ser exibido abaixo do primeiro.
      */
-    //% block="print %text"
+    //% block="print %text || with %text2"
     //% group="I/O" weight=100
-    export function print(text: any): void {
-        game.splash(text);
+    //% inlineInputMode=inline
+    export function print(text: any, text2?: any): void {
+        game.splash(text, text2);
     }
 
     /**
@@ -57,6 +59,21 @@ namespace py {
     export function replace(text: string, old: string, new_: string): string {
         // Usamos new_ para evitar conflito com a palavra-chave 'new'
         return text.replace(old, new_);
+    }
+
+    /**
+     * Divide uma string em uma lista de strings, usando um separador.
+     * Se nenhum separador for fornecido, divide pelos espaços.
+     * @param text A string a ser dividida, eg: "maçã,banana,laranja"
+     * @param separator O delimitador para dividir a string, eg: ","
+     */
+    //% block="split %text || by %separator"
+    //% separator.defl=" "
+    //% group="String" weight=50
+    //% inlineInputMode=inline
+    export function split(text: string, separator: string = " "): string[] {
+        // O método split do JavaScript é muito semelhante ao do Python.
+        return text.split(separator);
     }
 }
 
