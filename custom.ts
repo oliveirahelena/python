@@ -11,14 +11,14 @@ namespace py {
      * @param text2 (Opcional) Um segundo texto ou valor a ser exibido abaixo do primeiro.
      */
     //% block="print %text || with %text2"
-    //% group="I/O" weight=100
+    //% group="I/O" weight=110
     //% inlineInputMode=inline
     export function print(text: any, text2?: any): void {
         game.splash(text, text2);
     }
 
     /**
-     * Exibe uma mensagem na tela por um curto período.
+     * Exibe uma mensagem na parte de baixo da tela por um curto período.
      * Equivalente a print() em muitos contextos de aprendizado.
      * @param text O texto principal a ser exibido.
      */
