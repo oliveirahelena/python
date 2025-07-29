@@ -18,6 +18,18 @@ namespace py {
     }
 
     /**
+     * Exibe uma mensagem na tela por um curto período.
+     * Equivalente a print() em muitos contextos de aprendizado.
+     * @param text O texto principal a ser exibido.
+     */
+    //% block="sprint %text"
+    //% group="I/O" weight=100
+    //% inlineInputMode=inline
+    export function sprint(text: any): void {
+        game.showLongText(text, DialogLayout.Bottom)
+    }
+
+    /**
      * Pede ao usuário para digitar um texto e retorna o que foi digitado.
      * Equivalente a input().
      * @param prompt O texto a ser exibido para o usuário, eg: "Qual é o seu nome?"
